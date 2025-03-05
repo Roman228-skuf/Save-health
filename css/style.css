@@ -109,8 +109,25 @@ body {
     cursor: default;
   }
 
+.gallery{
+	display: flex;
+	flex-diraction: row;
+	allign-items: center;
+	gap:10px;
+	width:80%
+}
+
+.main-image{
+	width:400px;
+}
+
+.arrow-image{
+	width:64px;
+	height:64px;
+}
+
   .wishes{
-    margin-top: 30px;
+    margin-top: 30px;ss
     text-align: center;
   }
   #btn_wishes{
