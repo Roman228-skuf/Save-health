@@ -38,3 +38,31 @@ document.getElementById('btn_buy_hearths').addEventListener('click', () => {
     document.getElementById(p_wishes).innerText = ''
     console.log('all done')
 })
+
+const images = [
+    "img/gallery/4.png",
+    "img/gallery/5.png",
+    "img/gallery/6.png"
+  ];
+  
+  let currentIndex = 0;
+  
+  const imageElement = document.getElementById("main-image");
+  const prevButton = document.getElementById("left-arrow");
+  const nextButton = document.getElementById("right-arrow");
+  
+  function updateImage() {
+    imageElement.src = images[currentIndex];
+  }
+  
+  prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImage();
+  });
+  
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImage();
+  });
+  
+  updateImage();
