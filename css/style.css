@@ -109,27 +109,39 @@ body {
     cursor: default;
   }
 
-.gallery{
-	display: flex;
-	flex-diraction: row;
-	allign-items: center;
-	gap:10px;
-	width:80%
+.gallery {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 80%;
 }
 
-.main-image{
-	width:400px;
+.main-image {
+  width: 300px;
+  height: 200px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.arrow-image{
-	width:64px;
-	height:64px;
+.arrow-image1 {
+  width: 64px;
+  height: 64px;
+  padding-right: 10px;
 }
 
-  .wishes{
-    margin-top: 30px;
-    text-align: center;
-  }
+.arrow-image2 {
+  width: 64px;
+  height: 64px;
+  padding-left: 10px;
+}
+
+.wishes {
+  margin-top: 30px;
+  text-align: center;
+}
+
   #btn_wishes{
     background-color: #ff5a26;
     color: #ffffff;
@@ -145,4 +157,30 @@ body {
     line-height: 40px;
     color: #ff5a26;
     text-align: justify;
+  }
+  #left-arrow, #right-arrow {
+    cursor: pointer;
+  }
+  #left-arrow:hover, #right-arrow:hover {
+    filter: brightness(1.2); 
+    transform: scale(1.1); 
+    transition: transform 0.3s, filter 0.3s; 
+  }
+
+  .main-image {
+    width: 300px;
+    height: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+
+  #btn_wishes:disabled {
+    background-color: #cccccc; /* Сірий фон для неактивної кнопки */
+    cursor: default; /* Змінює курсор на неактивний */
   }
