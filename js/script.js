@@ -63,3 +63,82 @@ document.addEventListener('DOMContentLoaded', function() {
         changeImage(currentIndex);
     });
 });
+
+const arrayOfVitaminObjects = [
+    {
+        "id": "1",
+        "title": "Вітамін С",
+        "photo":"img/vitamin-c.png",
+        "description":"Найкращий вітамін, який підтримує імунітет, покращує здоров'я шкіри, волосся та нігтів.",
+        "rating": "",
+        "useful": "",
+    },
+
+    {
+        "id":"2",
+        "title": "Омега Д3",
+        "photo":"img/supplement.png",
+        "description":"Також відомий як холекальциф, відіграє важливу роль у підтримці здоров'я кісток та зубів, підтримує імунітет.",
+        "rating": "",
+        "useful": "",
+    },
+
+    {
+        "id":"3",
+        "title": "Вітамін В3",
+        "photo":"img/vitamins.png",
+        "description":"Допомагає зі шкірою, волоссям, нігтями, підтримує нервову систему, покращує пам'ять.",
+        "rating": "",
+        "useful": "",
+    },
+
+    {  
+    "id":"4",
+    "title": "Вітамін B12(x2)",
+    "photo":"img/supplementes.png",
+    "description":"Допомагає підтримувати зорову функцію, зміцнює імунітет, покращує стан шкіри, волосся та нігтів.",
+    "rating": "",
+    "useful": "",
+    }
+]
+
+console.log(arrayOfVitaminObjects);
+
+arrayOfVitaminObjects.forEach((item) => {
+    console.log(item);
+
+    // Створюємо контейнер для вітаміну
+    let divVitamin = document.createElement('div');
+    divVitamin.classList.add('vitamin');
+
+    // Додаємо HTML-структуру з фото і заголовком
+    divVitamin.innerHTML = `
+        <img src="${item.photo}" alt="${item.title}" class="vitamin-photo">
+        <p class="vitamin-title">${item.title}</p>
+    `;
+
+    // Додаємо подію для зміни тексту і приховування фото при наведенні
+    divVitamin.addEventListener('mouseover', () => {
+        divVitamin.querySelector('.vitamin-photo').style.opacity = '0'; // Приховуємо фото
+        divVitamin.querySelector('.vitamin-title').style.opacity = '0'; // Приховуємо заголовок
+        setTimeout(() => {
+            divVitamin.querySelector('.vitamin-title').innerText = item.description; // Змінюємо текст на опис
+            divVitamin.querySelector('.vitamin-photo').style.display = 'none'; // Повністю прибираємо фото
+            divVitamin.querySelector('.vitamin-title').style.opacity = '1'; // Показуємо опис
+        }, 150); // Час для плавного переходу
+    });
+
+    // Додаємо подію для повернення тексту і фото при відведенні курсора
+    divVitamin.addEventListener('mouseout', () => {
+        divVitamin.querySelector('.vitamin-title').style.opacity = '0'; // Приховуємо опис
+        setTimeout(() => {
+            divVitamin.querySelector('.vitamin-title').innerText = item.title; // Повертаємо заголовок
+            divVitamin.querySelector('.vitamin-photo').style.display = 'block'; // Повертаємо фото
+            divVitamin.querySelector('.vitamin-photo').style.opacity = '1'; // Показуємо фото
+            divVitamin.querySelector('.vitamin-title').style.opacity = '1'; // Показуємо заголовок
+        }, 150); // Час для плавного переходу
+    });
+
+    // Додаємо елемент до контейнера
+    document.getElementById('p_vitamins').appendChild(divVitamin);
+});

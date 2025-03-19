@@ -184,3 +184,46 @@ body {
     background-color: #cccccc; /* Сірий фон для неактивної кнопки */
     cursor: default; /* Змінює курсор на неактивний */
   }
+
+  #p_vitamins{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .vitamin{
+    border: #999999 1px solid;
+    box-shadow: 10px 10px 20px #c4c4c4;
+    padding: 10px;
+    width: 150px;
+    height: 200px;
+    text-align: center;
+    color: #ff5a26;
+    font-size: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .vitamin:hover {
+    transform: scale(1.1); 
+    box-shadow: 15px 15px 30px #aaaaaa; 
+    background-color: #f5f5f5; 
+  }
+
+  .vitamin-title {
+    margin: 0;
+    font-size: 18px;
+    color: #ff5a26;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .vitamin-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease-in-out;
+  }
