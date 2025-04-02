@@ -71,7 +71,7 @@ const arrayOfVitaminObjects = [
         "photo":"img/vitamins/vitamin-c.png",
         "description":"Найкращий вітамін, який підтримує імунітет, покращує здоров'я шкіри, волосся та нігтів.",
         "rating": "3",
-        "useful": "",
+        "schema": "img/schema/c-schema.png",
     },
 
     {
@@ -80,7 +80,7 @@ const arrayOfVitaminObjects = [
         "photo":"img/vitamins/supplement.png",
         "description":"Також відомий як холекальциф, відіграє важливу роль у підтримці здоров'я кісток та зубів, підтримує імунітет.",
         "rating": "2",
-        "useful": "",
+        "schema": "img/schema/omega-d3.png",
     },
 
     {
@@ -89,7 +89,7 @@ const arrayOfVitaminObjects = [
         "photo":"img/vitamins/vitamins.png",
         "description":"Допомагає зі шкірою, волоссям, нігтями, підтримує нервову систему, покращує пам'ять.",
         "rating": "5",
-        "useful": "",
+        "schema": "img/schema/b3.png",
     },
 
     {  
@@ -98,7 +98,7 @@ const arrayOfVitaminObjects = [
     "photo":"img/vitamins/supplementes.png",
     "description":"Допомагає підтримувати зорову функцію, зміцнює імунітет, покращує стан шкіри, волосся та нігтів.",
     "rating": "4",
-    "useful": "",
+    "schema": "img/schema/b12.png",
     }
 ]
 
@@ -107,46 +107,45 @@ console.log(arrayOfVitaminObjects);
 arrayOfVitaminObjects.forEach((item) => {
     console.log(item);
 
-   
     let divVitamin = document.createElement('div');
     divVitamin.classList.add('vitamin');
 
-  
     let ratingEmojis = '🧡'.repeat(item.rating) + '🤍'.repeat(5 - item.rating);
 
-    
     divVitamin.innerHTML = `
         <img src="${item.photo}" alt="${item.title}" class="vitamin-photo">
         <p class="vitamin-title">${item.title}</p>
         <p class="vitamin-rating">${ratingEmojis}</p>
     `;
 
-    
     divVitamin.addEventListener('mouseover', () => {
-        divVitamin.querySelector('.vitamin-photo').style.opacity = '0'; 
-        divVitamin.querySelector('.vitamin-title').style.opacity = '0'; 
-        divVitamin.querySelector('.vitamin-rating').style.opacity = '0'; 
+        divVitamin.querySelector('.vitamin-photo').style.opacity = '0';
+        divVitamin.querySelector('.vitamin-title').style.opacity = '0';
+        divVitamin.querySelector('.vitamin-rating').style.opacity = '0';
         setTimeout(() => {
-            divVitamin.querySelector('.vitamin-title').innerText = item.description; 
-            divVitamin.querySelector('.vitamin-photo').style.display = 'none'; 
-            divVitamin.querySelector('.vitamin-rating').style.display = 'none'; 
-            divVitamin.querySelector('.vitamin-title').style.opacity = '1'; 
-        }, 150); 
+            divVitamin.querySelector('.vitamin-title').innerText = item.description;
+            divVitamin.querySelector('.vitamin-photo').style.display = 'none';
+            divVitamin.querySelector('.vitamin-rating').style.display = 'none';
+            divVitamin.querySelector('.vitamin-title').style.opacity = '1';
+        }, 150);
     });
 
-    
     divVitamin.addEventListener('mouseout', () => {
-        divVitamin.querySelector('.vitamin-title').style.opacity = '0'; 
+        divVitamin.querySelector('.vitamin-title').style.opacity = '0';
         setTimeout(() => {
-            divVitamin.querySelector('.vitamin-title').innerText = item.title; 
-            divVitamin.querySelector('.vitamin-photo').style.display = 'block'; 
-            divVitamin.querySelector('.vitamin-rating').style.display = 'block'; 
-            divVitamin.querySelector('.vitamin-photo').style.opacity = '1'; 
-            divVitamin.querySelector('.vitamin-title').style.opacity = '1'; 
-            divVitamin.querySelector('.vitamin-rating').style.opacity = '1'; 
-        }, 150); 
+            divVitamin.querySelector('.vitamin-title').innerText = item.title;
+            divVitamin.querySelector('.vitamin-photo').style.display = 'block';
+            divVitamin.querySelector('.vitamin-rating').style.display = 'block';
+            divVitamin.querySelector('.vitamin-photo').style.opacity = '1';
+            divVitamin.querySelector('.vitamin-title').style.opacity = '1';
+            divVitamin.querySelector('.vitamin-rating').style.opacity = '1';
+        }, 150);
     });
 
-    
+    divVitamin.addEventListener('click', () => {
+        const schemaContainer = document.getElementById('vitamin-schema-container');
+        schemaContainer.innerHTML = `<img src="${item.schema}" alt="Схема ${item.title}" class="vitamin-schema">`;
+    });
+
     document.getElementById('p_vitamins').appendChild(divVitamin);
 });

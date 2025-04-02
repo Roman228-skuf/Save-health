@@ -43,7 +43,7 @@ body {
     }
   
   .container {
-    width: 480px;
+    width: 800px;
     margin: 0 auto;
   }
   
@@ -111,10 +111,9 @@ body {
 
 .gallery {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
   gap: 10px;
-  width: 80%;
 }
 
 .main-image {
@@ -181,8 +180,8 @@ body {
   }
 
   #btn_wishes:disabled {
-    background-color: #cccccc; /* Сірий фон для неактивної кнопки */
-    cursor: default; /* Змінює курсор на неактивний */
+    background-color: #cccccc; 
+    cursor: default; 
   }
 
   #p_vitamins{
@@ -191,6 +190,15 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
+  }
+
+  .vitamin div{
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .vitamin div>p:first-child{
+    margin-top: center;
   }
 
   .vitamin{
@@ -224,9 +232,54 @@ body {
     width: 100px;
     height: 100px;
     object-fit: cover;
+    display: block;
+    margin: 0 auto;
     margin-bottom: 10px;
     transition: opacity 0.3s ease-in-out;
   }
 
+  .info-vitamin{
+    text-align: center;
+    font-size: 16px;
+    color: #9c2b08;
+    font-weight: bold;
 
+  }
+
+  .vitamin-schema-display {
+    margin-top: 30px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #c9d6e0;
+  }
+  
+  #vitamin-schema-container {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #6e1111;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #26289b;
+    padding: 10px;
+  }
+  
+  .vitamin-schema {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .vitamin-schema {
+    width: 450px; 
+    height: 300px; 
+    object-fit: contain; 
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px; 
+}
 
