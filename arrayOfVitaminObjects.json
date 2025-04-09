@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "title": "Вітамін С",
+        "photo":"img/vitamins/vitamin-c.png",
+        "description":"Найкращий вітамін, який підтримує імунітет, покращує здоров'я шкіри, волосся та нігтів.",
+        "rating": "3",
+        "schema": "img/schema/c-schema.png"
+    },
+
+    {
+        "id":"2",
+        "title": "Омега Д3",
+        "photo":"img/vitamins/supplement.png",
+        "description":"Також відомий як холекальциф, відіграє важливу роль у підтримці здоров'я кісток та зубів, підтримує імунітет.",
+        "rating": "2",
+        "schema": "img/schema/omega-d3.png"
+    },
+
+    {
+        "id":"3",
+        "title": "Вітамін В3",
+        "photo":"img/vitamins/vitamins.png",
+        "description":"Допомагає зі шкірою, волоссям, нігтями, підтримує нервову систему, покращує пам'ять.",
+        "rating": "5",
+        "schema": "img/schema/b3.png"
+    },
+
+    {  
+    "id":"4",
+    "title": "Вітамін B12(x2)",
+    "photo":"img/vitamins/supplementes.png",
+    "description":"Допомагає підтримувати зорову функцію, зміцнює імунітет, покращує стан шкіри, волосся та нігтів.",
+    "rating": "4",
+    "schema": "img/schema/b12.png"
+    }
+]
