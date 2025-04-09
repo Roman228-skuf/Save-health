@@ -89,22 +89,22 @@ body {
   .site-footer {
     display: flex;
     justify-content: space-between;
-    color: #999999;
+    color: #fc1313;
   }
 
   .site-footer p {
     font-family: "Georgia", serif;
     font-size: 18px;
-    color: #d3542e;
-    background-color: #ffe2e2;
+    color: #1eb95f;
+    background-color: #4c52a7;
     padding: 10px 20px;
     border-radius: 10px 10px 10px 10px;
-    border: 1px solid #ff5a26;
+    border: 1px solid #0a9696;
     cursor: pointer;
   }
 
   .site-footer p:last-child {
-    background-color: #d3542e;
+    background-color: #1c8651;
     color: #ffffff;
     cursor: default;
   }
@@ -142,19 +142,29 @@ body {
 }
 
   #btn_wishes{
-    background-color: #ff5a26;
+    background-color: #0d4b29;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
+    
   }
+
+  #btn_wishes:hover {
+    background-color: #05435f;
+    color: rgb(165, 145, 145);
+    transition: opacity 1 ease-in-out;
+    transform: scale(1.15);
+ 
+  }
+
   #p_wishes{
     height: 150px;
     font-size: 28px;
     line-height: 40px;
-    color: #ff5a26;
+    color: #084216;
     text-align: justify;
   }
   #left-arrow, #right-arrow {
@@ -224,7 +234,7 @@ body {
   .vitamin-title {
     margin: 0;
     font-size: 18px;
-    color: #ff5a26;
+    color: #135505;
     transition: opacity 0.3s ease-in-out;
   }
 
