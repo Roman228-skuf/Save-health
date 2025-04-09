@@ -78,7 +78,7 @@ fetch('arrayOfVitaminObjects.json')
             let ratingEmojis = '🧡'.repeat(item.rating) + '🤍'.repeat(5 - item.rating);
 
             divVitamin.innerHTML = `
-                <img src="${item.photo}" alt="${item.title}" class="vitamin-photo">
+                <img src="${item.photo}" alt="${item.title}" class="vitamin-photo" onerror="this.src='img/noimage.png';">
                 <p class="vitamin-title">${item.title}</p>
                 <p class="vitamin-rating">${ratingEmojis}</p>
             `;
@@ -109,7 +109,7 @@ fetch('arrayOfVitaminObjects.json')
 
             divVitamin.addEventListener('click', () => {
                 const schemaContainer = document.getElementById('vitamin-schema-container');
-                schemaContainer.innerHTML = `<img src="${item.schema}" alt="Схема ${item.title}" class="vitamin-schema">`;
+                schemaContainer.innerHTML = `<img src="${item.schema}" alt="Схема ${item.title}" class="vitamin-schema" onerror="this.src='img/noimage.png';">`;
             });
 
             document.getElementById('p_vitamins').appendChild(divVitamin);
