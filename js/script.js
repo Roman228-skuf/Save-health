@@ -78,12 +78,15 @@ fetch('arrayOfVitaminObjects.json')
             let ratingEmojis = '🧡'.repeat(item.rating) + '🤍'.repeat(5 - item.rating);
 
             divVitamin.innerHTML = `
+                <span class="vitamin-id">ID: ${item.id}</span>
                 <img src="${item.photo}" alt="${item.title}" class="vitamin-photo" onerror="this.src='img/noimage.png';">
                 <p class="vitamin-title">${item.title}</p>
                 <p class="vitamin-rating">${ratingEmojis}</p>
             `;
 
+      
             divVitamin.addEventListener('mouseover', () => {
+                divVitamin.querySelector('.vitamin-id').style.opacity = '0'; // Приховуємо ID
                 divVitamin.querySelector('.vitamin-photo').style.opacity = '0';
                 divVitamin.querySelector('.vitamin-title').style.opacity = '0';
                 divVitamin.querySelector('.vitamin-rating').style.opacity = '0';
@@ -95,7 +98,9 @@ fetch('arrayOfVitaminObjects.json')
                 }, 150);
             });
 
+            
             divVitamin.addEventListener('mouseout', () => {
+                divVitamin.querySelector('.vitamin-id').style.opacity = '1'; // Повертаємо ID
                 divVitamin.querySelector('.vitamin-title').style.opacity = '0';
                 setTimeout(() => {
                     divVitamin.querySelector('.vitamin-title').innerText = item.title;
